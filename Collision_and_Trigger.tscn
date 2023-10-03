@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs2a55yd504yn"]
+
+[ext_resource type="Texture2D" uid="uid://b7eg173u55uam" path="res://img/Background.jpg" id="1_4vx61"]
+[ext_resource type="Texture2D" uid="uid://ds7vqmtkj0gnh" path="res://img/car/Blue_Car.png" id="1_tg5ko"]
+[ext_resource type="Script" path="res://script/Carro.gd" id="2_2t3ot"]
+[ext_resource type="Texture2D" uid="uid://diu0fhsmvspdx" path="res://img/icons/balloon.png" id="3_csvce"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ehxw"]
+size = Vector2(324, 238)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.6, 1.6)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(35, -10)
+texture = ExtResource("1_4vx61")
+
+[node name="Carro" type="Area2D" parent="."]
+position = Vector2(49, 103)
+script = ExtResource("2_2t3ot")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carro"]
+shape = SubResource("RectangleShape2D_8ehxw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Carro"]
+scale = Vector2(1.27273, 1.27273)
+texture = ExtResource("1_tg5ko")
+
+[node name="Area2D_ Contato" type="Area2D" parent="."]
+position = Vector2(385, 98)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_ Contato"]
+shape = SubResource("RectangleShape2D_8ehxw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D_ Contato"]
+scale = Vector2(0.3475, 0.3475)
+texture = ExtResource("3_csvce")

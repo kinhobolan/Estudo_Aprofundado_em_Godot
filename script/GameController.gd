@@ -17,11 +17,11 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("direita"):
-		greenCarSprite2D.position.x += 5
+		sprite2DArray[randi()%sprite2DArray.size()].position.x += 5
 		print("Direita")
 		
 	if Input.is_action_just_pressed("esquerda"):
-		greenCarSprite2D.position.x -= 5
+		sprite2DArray[randi()%sprite2DArray.size()].position.x -= 5
 		print("Esquerda")
 		
 	if Input.is_action_just_pressed("1"):		

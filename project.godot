@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="Estudo_Aprofundado"
-run/main_scene="res://scenes/main_node_2d.tscn"
+run/main_scene="res://scenes/Nodes_and_Array.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://img/icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
 
 [input]
 

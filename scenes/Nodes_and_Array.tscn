@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://cttm8f03dsh7r"]
+
+[ext_resource type="Script" path="res://script/GameController.gd" id="1_l7tts"]
+[ext_resource type="Texture2D" uid="uid://ds7vqmtkj0gnh" path="res://img/car/Blue_Car.png" id="2_v7fk4"]
+[ext_resource type="Script" path="res://script/Car.gd" id="3_f558f"]
+[ext_resource type="Script" path="res://script/BlueCar.gd" id="4_nvth3"]
+[ext_resource type="Texture2D" uid="uid://c35wiamvon3ij" path="res://img/car/Green_Car.png" id="5_cx7nd"]
+[ext_resource type="PackedScene" uid="uid://devrvih8dsyru" path="res://scenes/car.tscn" id="6_nhdpi"]
+
+[node name="Main_Node2D" type="Node2D"]
+
+[node name="GameController" type="Node2D" parent="." node_paths=PackedStringArray("greenCarSprite2D", "sprite2DArray", "node2DArray")]
+position = Vector2(0, -63)
+script = ExtResource("1_l7tts")
+greenCarSprite2D = NodePath("../Car")
+sprite2DArray = [NodePath("../Car"), NodePath("../BlueCar"), NodePath("../GreenCar")]
+node2DArray = [NodePath("../CarRoot")]
+usandoEnumDirecao = "paraCima"
+
+[node name="Car" type="Sprite2D" parent="."]
+position = Vector2(-267, -231)
+texture = ExtResource("2_v7fk4")
+script = ExtResource("3_f558f")
+
+[node name="BlueCar" type="Sprite2D" parent="." groups=["Cars"]]
+position = Vector2(0, -63)
+texture = ExtResource("2_v7fk4")
+script = ExtResource("4_nvth3")
+
+[node name="GreenCar" type="Sprite2D" parent="." groups=["Cars"]]
+position = Vector2(253, -66)
+texture = ExtResource("5_cx7nd")
+
+[node name="CarRoot" parent="." instance=ExtResource("6_nhdpi")]
+position = Vector2(-367, -53)
+
+[node name="Camera2D" type="Camera2D" parent="."]
