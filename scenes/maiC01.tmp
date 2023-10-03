@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cttm8f03dsh7r"]
+
+[ext_resource type="Script" path="res://script/GameController.gd" id="1_w26e1"]
+[ext_resource type="Texture2D" uid="uid://ds7vqmtkj0gnh" path="res://img/car/Blue_Car.png" id="1_xnmmh"]
+[ext_resource type="Script" path="res://script/Car.gd" id="2_0h3tu"]
+[ext_resource type="Texture2D" uid="uid://c35wiamvon3ij" path="res://img/car/Green_Car.png" id="2_giuou"]
+[ext_resource type="Script" path="res://script/BlueCar.gd" id="3_qvonc"]
+
+[node name="Main_Node2D" type="Node2D"]
+
+[node name="GameController" type="Node2D" parent="."]
+position = Vector2(0, -63)
+script = ExtResource("1_w26e1")
+
+[node name="Car" type="Sprite2D" parent="."]
+position = Vector2(-267, -231)
+texture = ExtResource("1_xnmmh")
+script = ExtResource("2_0h3tu")
+
+[node name="BlueCar" type="Sprite2D" parent="." groups=["Cars"]]
+position = Vector2(0, -63)
+texture = ExtResource("1_xnmmh")
+script = ExtResource("3_qvonc")
+
+[node name="GreenCar" type="Sprite2D" parent="." groups=["Cars"]]
+position = Vector2(253, -66)
+texture = ExtResource("2_giuou")
+
+[node name="Camera2D" type="Camera2D" parent="."]
